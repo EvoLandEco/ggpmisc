@@ -583,7 +583,7 @@ poly_eq_compute_group_fun <- function(data,
   } else if (is.character(data$group) &&
              grepl("<[0-9]*>$", data$group[1])) {
     # 'gganimate' has set the groups
-    group.idx <- abs(as.numeric(gsub("<[0-9]*>", "", data$group[1])))
+    group.idx <- abs(as.numeric(gsub("[0-9]+<|>", "", data$group[1])))
   } else {
     group.idx <- NA_integer_
   }
